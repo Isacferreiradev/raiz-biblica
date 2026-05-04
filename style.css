@@ -1011,6 +1011,47 @@ table {
     padding: 10px;
 }
 
+/* Responsividade do Modal */
+@media (max-width: 480px) {
+    .modal-card {
+        padding: 25px 20px;
+        border-radius: 24px;
+    }
+
+    .modal-badge {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .modal-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .modal-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+    }
+
+    .modal-price-box {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .new-price-modal {
+        font-size: 1.6rem;
+    }
+
+    .modal-features {
+        margin-bottom: 20px;
+    }
+
+    .modal-features li {
+        font-size: 0.8rem;
+    }
+}
+
 /* 17. TESTIMONIALS (WHATSAPP STYLE) */
 .testimonials {
     padding: 60px 0;
