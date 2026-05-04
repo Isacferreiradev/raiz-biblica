@@ -510,14 +510,59 @@ td.success {
     margin-bottom: 40px;
 }
 
+.pricing-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.scarcity-card {
+    background: #FF4444;
+    color: white;
+    padding: 15px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(255, 68, 68, 0.2);
+    text-transform: uppercase;
+}
+
 .pricing-card-basic, .pricing-card-final {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 32px;
-    padding: 40px 25px;
     text-align: center;
     position: relative;
     transition: 0.3s;
+}
+
+.card-body {
+    padding: 30px 25px 40px;
+}
+
+.timer-card {
+    background: white;
+    color: #FF4444;
+    padding: 2px 10px;
+    border-radius: 6px;
+    margin-left: 8px;
+    font-size: 1.1rem;
+}
+
+.social-proof-tag-inline {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #FFA500;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: rgba(255, 165, 0, 0.05);
+    padding: 8px;
+    border-radius: 10px;
 }
 
 .pricing-card-final.featured {
@@ -628,7 +673,7 @@ td.success {
 
 .btn-buy {
     background: var(--gold);
-    color: #000;
+    color: white; /* Changed from #000 */
     box-shadow: 0 6px 0 var(--gold-dark);
 }
 
@@ -784,4 +829,384 @@ table {
 .urgency-bar p {
     margin: 0;
     font-size: 0.8rem;
+}
+
+/* 15. SALE NOTIFICATION */
+.sale-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: var(--white);
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 9999;
+    transform: translateX(-150%);
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-left: 5px solid #22C55E;
+    max-width: 320px;
+}
+
+.sale-notification.active {
+    transform: translateX(0);
+}
+
+.sale-icon {
+    width: 40px;
+    height: 40px;
+    background: #22C55E;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.sale-content p {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.sale-content strong {
+    font-size: 0.85rem;
+    color: #111;
+    display: block;
+}
+
+@media (max-width: 480px) {
+    .sale-notification {
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        max-width: none;
+    }
+}
+
+/* 16. MODAL UPSELL */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-card {
+    background: var(--surface);
+    border: 1px solid var(--gold);
+    border-radius: 32px;
+    padding: 40px 30px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    animation: modalIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-badge {
+    width: 60px;
+    height: 60px;
+    background: var(--gold);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto 20px;
+}
+
+.modal-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.modal-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.green-text {
+    color: #22C55E;
+    font-weight: 800;
+}
+
+.modal-price-box {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px dashed var(--border);
+    margin-bottom: 25px;
+}
+
+.new-price-modal {
+    font-size: 2rem;
+    color: #22C55E;
+    font-weight: 900;
+    margin: 5px 0;
+}
+
+.save-text {
+    font-size: 0.85rem;
+    color: #EF4444;
+    font-weight: 700;
+}
+
+.modal-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.modal-features li {
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-features li i {
+    color: #22C55E;
+}
+
+.modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-modal-no {
+    color: var(--text-muted);
+    text-decoration: underline;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+/* 17. TESTIMONIALS (WHATSAPP STYLE) */
+.testimonials {
+    padding: 60px 0;
+    background: #0C0A09;
+}
+
+.whatsapp-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px 5px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.whatsapp-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.whatsapp-card {
+    min-width: 300px;
+    background: #e5ddd5;
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    padding: 20px;
+    border-radius: 20px;
+    scroll-snap-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    filter: brightness(1.02) contrast(0.98) saturate(1.05); /* Slight screenshot feel */
+}
+
+/* Watermark */
+.whatsapp-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/logo.png');
+    background-size: 60px;
+    background-repeat: repeat;
+    opacity: 0.04; /* Very subtle */
+    pointer-events: none;
+    z-index: 0;
+}
+
+.chat-header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.chat-msg {
+    max-width: 82%; /* Slightly smaller for more 'whatsapp' feel */
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.client-msg {
+    background: white;
+    color: #333;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+}
+
+.support-msg {
+    background: #dcf8c6;
+    color: #333;
+    align-self: flex-end;
+    margin-left: auto; /* Force to right */
+    border-top-right-radius: 0;
+}
+
+.chat-time {
+    display: block;
+    text-align: right;
+    font-size: 0.65rem;
+    color: #999;
+    margin-top: 5px;
+}
+
+.support-msg .chat-time i {
+    color: #34b7f1; /* WA blue ticks */
+}
+
+.scroll-hint {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 20px;
+}
+
+/* 18. SOBRE O AUTOR */
+.author {
+    padding: 80px 0;
+    background: radial-gradient(circle at bottom, #1C1917 0%, #0C0A09 100%);
+}
+
+.author-card {
+    background: var(--surface);
+    border: 1px solid var(--gold);
+    border-radius: 32px;
+    padding: 50px 30px;
+    text-align: center;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.author-name {
+    font-size: 2.2rem;
+    color: var(--gold);
+    font-weight: 900;
+    margin-bottom: 5px;
+    letter-spacing: -1px;
+}
+
+.author-title {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.author-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px 10px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+.stat-value {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #22C55E;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.author-quote {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text);
+    font-style: italic;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.author-img-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    padding: 5px;
+    background: var(--surface);
+}
+
+.author-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@media (max-width: 480px) {
+    .author-stats {
+        grid-template-columns: 1fr;
+    }
+    .author-name {
+        font-size: 1.8rem;
+    }
 }
