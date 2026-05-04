@@ -97,16 +97,18 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 2.1rem;
-    margin-bottom: 15px;
+    font-size: 1.75rem; /* Reduced from 2.1rem */
+    margin-bottom: 12px;
     color: var(--white);
+    letter-spacing: -0.5px;
 }
 
 .subtitle {
     color: var(--text-muted);
-    font-size: 0.95rem; /* Smaller sub-headline */
-    margin-bottom: 40px;
-    line-height: 1.4;
+    font-size: 0.9rem; /* Balanced size */
+    margin-bottom: 30px;
+    line-height: 1.5;
+    padding: 0 10px;
 }
 
 .hero-video {
@@ -170,13 +172,13 @@ h1 {
     width: 100%;
     background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
     color: white;
-    padding: 22px;
-    border-radius: 20px;
+    padding: 18px; /* Reduced from 22px */
+    border-radius: 16px;
     text-decoration: none;
     font-weight: 800;
-    font-size: 1.25rem;
+    font-size: 1.15rem; /* Reduced from 1.25rem */
     text-align: center;
-    box-shadow: 0 6px 0 #14532D;
+    box-shadow: 0 5px 0 #14532D;
     transition: 0.1s;
 }
 
@@ -553,7 +555,7 @@ td.success {
 .strike { text-decoration: line-through; color: var(--red); }
 
 .price-value-basic, .price-value-basic strong {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Reduced */
     font-weight: 900;
     color: var(--text);
     margin: 10px 0;
@@ -561,12 +563,12 @@ td.success {
 }
 
 .price-value, .price-value strong {
-    font-size: 4.5rem;
+    font-size: 3.8rem; /* Reduced from 4.5rem */
     font-weight: 900;
     color: var(--gold);
     margin: 10px 0;
     line-height: 1;
-    letter-spacing: -3px;
+    letter-spacing: -2px;
 }
 
 .price-info {
