@@ -719,8 +719,57 @@ td.success {
     box-shadow: 0 8px 20px rgba(22, 163, 74, 0.3);
 }
 
-/* RESPONSIVE */
-@media (max-width: 420px) {
-    h1 { font-size: 1.8rem; }
+/* RESPONSIVE REFINEMENTS */
+@media (max-width: 360px) {
+    h1 { font-size: 1.7rem; }
+    .section-title { font-size: 1.5rem; }
     .price-value { font-size: 3.5rem; }
+    .price-value-basic { font-size: 2.5rem; }
+    .preview-grid { grid-template-columns: 1fr; } /* Single column on very small phones */
+    .bonus-card { padding: 15px; }
+    .check-list li { font-size: 0.9rem; padding: 15px; }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 800px; /* Expand a bit for tablets/desktop if needed */
+    }
+    
+    .pricing-grid-tiered {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 20px;
+    }
+    
+    .pricing-card-basic, .pricing-card-final {
+        flex: 1;
+    }
+
+    .preview-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns on larger screens */
+    }
+    
+    .bonus-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* FIX: Ensure table doesn't overflow */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+/* FIX: Sticky Bar improvement */
+.urgency-bar p {
+    margin: 0;
+    font-size: 0.8rem;
 }
