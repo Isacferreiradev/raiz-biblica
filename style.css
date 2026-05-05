@@ -1251,3 +1251,70 @@ table {
         font-size: 1.8rem;
     }
 }
+
+/* 19. MAP CATALOG SCROLL */
+.map-catalog {
+    padding: 40px 0;
+    background: #0C0A09;
+}
+
+.catalog-subtitle {
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.catalog-scroll {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px 5px;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+}
+
+.catalog-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.catalog-item {
+    min-width: 220px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    scroll-snap-align: center;
+    transition: 0.3s;
+}
+
+.catalog-item:hover {
+    border-color: var(--gold);
+}
+
+.catalog-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin: 0 auto 15px;
+}
+
+.catalog-item h4 {
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.catalog-item p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
