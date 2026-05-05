@@ -98,8 +98,7 @@ if (basicBtn) {
 
 if (closeUpsell) {
     closeUpsell.addEventListener('click', (e) => {
-        e.preventDefault();
+        // Removido preventDefault para permitir o redirecionamento para o checkout básico
         upsellModal.classList.remove('active');
-        // Redirecionamento futuro para o checkout básico pode ser adicionado aqui
     });
 }
