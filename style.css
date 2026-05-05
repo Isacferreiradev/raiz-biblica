@@ -1056,34 +1056,33 @@ table {
 .testimonials {
     padding: 60px 0;
     background: #0C0A09;
+    overflow: hidden;
 }
 
 .whatsapp-scroll {
     display: flex;
     gap: 20px;
     overflow-x: auto;
-    padding: 20px 5px;
+    padding: 20px 20px 40px; /* More bottom padding for shadows */
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-}
-
-.whatsapp-scroll::-webkit-scrollbar {
-    display: none;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) transparent;
 }
 
 .whatsapp-card {
-    min-width: 300px;
+    flex: 0 0 300px; /* Prevent shrinking */
     background: #e5ddd5;
     background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
     padding: 20px;
     border-radius: 20px;
-    scroll-snap-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    scroll-snap-align: start;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    filter: brightness(1.02) contrast(0.98) saturate(1.05); /* Slight screenshot feel */
+    filter: brightness(1.02) contrast(0.98) saturate(1.05);
 }
 
 /* Watermark */
@@ -1270,9 +1269,10 @@ table {
     display: flex;
     gap: 15px;
     overflow-x: auto;
-    padding: 10px 5px;
+    padding: 10px 20px 30px; /* Better padding for shadows */
     scrollbar-width: none;
     scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
 
 .catalog-scroll::-webkit-scrollbar {
@@ -1280,13 +1280,13 @@ table {
 }
 
 .catalog-item {
-    min-width: 220px;
+    flex: 0 0 220px; /* Prevent shrinking */
     background: var(--surface);
     border: 1px solid var(--border);
     padding: 20px;
     border-radius: 20px;
     text-align: center;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     transition: 0.3s;
 }
 
