@@ -32,28 +32,39 @@
     <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="style.css"></noscript>
 
-    <!-- Meta Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '25998088983199820');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=25998088983199820&ev=PageView&noscript=1" /></noscript>
-    <!-- End Meta Pixel Code -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
 
-    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
-        data-utmify-prevent-subids async defer></script>
+    <!-- Delayed Scripts for Performance -->
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                // Meta Pixel
+                !function (f, b, e, v, n, t, s) {
+                    if (f.fbq) return; n = f.fbq = function () {
+                        n.callMethod ?
+                            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    };
+                    if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+                    n.queue = []; t = b.createElement(e); t.async = !0;
+                    t.src = v; s = b.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t, s)
+                }(window, document, 'script',
+                    'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '25998088983199820');
+                fbq('track', 'PageView');
+
+                // Utmify
+                var utmScript = document.createElement('script');
+                utmScript.src = "https://cdn.utmify.com.br/scripts/utms/latest.js";
+                utmScript.setAttribute('data-utmify-prevent-xcod-sck', '');
+                utmScript.setAttribute('data-utmify-prevent-subids', '');
+                utmScript.async = true;
+                utmScript.defer = true;
+                document.head.appendChild(utmScript);
+            }, 2500); // 2.5 seconds delay
+        });
+    </script>
 </head>
 
 <body>
@@ -67,7 +78,7 @@
     <header class="hero">
         <div class="container">
             <div class="logo">
-                <img src="assets/logo.png" alt="Raiz Bíblica Logo" width="180" height="60" fetchpriority="high">
+                <img src="assets/logo.png" alt="Raiz Bíblica Logo" width="180" height="60" fetchpriority="high" decoding="async">
             </div>
             <h1>+300 Mapas Visuais para Entender a Bíblia</h1>
             <p class="subtitle">Acesse o maior acervo de mapas bíblicos do Brasil e veja toda a história de Gênesis a
