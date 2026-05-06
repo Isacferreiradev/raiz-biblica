@@ -7,13 +7,30 @@
     <title>Raiz Bíblica: Entenda a Bíblia em Minutos com Mapas Mentais</title>
     <meta name="description"
         content="Visualize a Bíblia de Gênesis a Apocalipse. Entenda cada livro em poucos minutos com mais de 300 mapas visuais organizados. Ideal para iniciantes.">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Critical CSS for Instant Load -->
+    <style>
+        :root { --primary: #15803D; --gold: #D4AF37; --bg: #0C0A09; --surface: #1C1917; --border: #292524; --text: #F5F5F4; --text-muted: #A8A29E; --white: #FFFFFF; --red: #DC2626; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.5; overflow-x: hidden; }
+        .container { width: 100%; max-width: 480px; margin: 0 auto; padding: 0 20px; }
+        .urgency-bar { background-color: var(--red); color: var(--white); text-align: center; padding: 8px 10px; font-size: 0.75rem; font-weight: 700; position: sticky; top: 0; z-index: 1000; }
+        .timer-highlight { background: #FFD700; color: #000; padding: 1px 6px; border-radius: 4px; margin-left: 4px; display: inline-block; font-weight: 800; }
+        .hero { padding: 25px 0 40px; text-align: center; background: radial-gradient(circle at top, #1C1917 0%, #0C0A09 100%); }
+        .logo img { max-width: 120px; height: auto; display: block; margin: 0 auto 25px; }
+        h1 { font-family: 'Outfit', sans-serif; font-size: 1.75rem; margin-bottom: 12px; color: var(--white); font-weight: 800; }
+        .btn-primary { display: block; width: 100%; background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%); color: white; padding: 18px; border-radius: 16px; text-decoration: none; font-weight: 800; font-size: 1.15rem; text-align: center; }
+    </style>
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
 
     <!-- Meta Pixel Code -->
     <script>
@@ -49,19 +66,20 @@
     <!-- 2. HERO SECTION -->
     <header class="hero">
         <div class="container">
-            <div class="logo"><img src="assets/logo.png" alt="Bíblia Visual Logo"></div>
+            <div class="logo">
+                <img src="assets/logo.png" alt="Raiz Bíblica Logo" width="180" height="60" fetchpriority="high">
+            </div>
             <h1>+300 Mapas Visuais para Entender a Bíblia</h1>
             <p class="subtitle">Acesse o maior acervo de mapas bíblicos do Brasil e veja toda a história de Gênesis a
                 Apocalipse de forma clara, organizada e sem esforço.</p>
 
             <div class="hero-video">
                 <div class="video-container">
-                    <iframe id="panda-5694b62a-9365-4d3c-90b4-c64b67eb9e1f" 
+                    <iframe id="panda-vsl" 
                         src="https://player-vz-dafcf77f-4d7.tv.pandavideo.com.br/embed/?v=5694b62a-9365-4d3c-90b4-c64b67eb9e1f" 
                         style="border:none;" 
                         allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
-                        allowfullscreen=true 
-                        fetchpriority="high">
+                        allowfullscreen=true>
                     </iframe>
                 </div>
             </div>
@@ -207,22 +225,22 @@
             <p class="preview-subtitle">Design moderno criado para facilitar a memorização imediata.</p>
             <div class="preview-grid">
                 <div class="preview-card">
-                    <div class="preview-img"><img src="assets/mapa_genesis.png" alt="Mapa Mental Gênesis"></div>
+                    <div class="preview-img"><img src="assets/mapa_genesis.png" alt="Mapa Mental Gênesis" width="400" height="300" loading="lazy"></div>
                     <h3>GÊNESIS</h3>
                     <p>O Início de Tudo</p>
                 </div>
                 <div class="preview-card">
-                    <div class="preview-img"><img src="assets/mapa_exodo.png" alt="Mapa Mental Êxodo"></div>
+                    <div class="preview-img"><img src="assets/mapa_exodo.png" alt="Mapa Mental Êxodo" width="400" height="300" loading="lazy"></div>
                     <h3>ÊXODO</h3>
                     <p>A Rota da Liberdade</p>
                 </div>
                 <div class="preview-card">
-                    <div class="preview-img"><img src="assets/mapa_levitico.png" alt="Mapa Mental Levítico"></div>
+                    <div class="preview-img"><img src="assets/mapa_levitico.png" alt="Mapa Mental Levítico" width="400" height="300" loading="lazy"></div>
                     <h3>LEVÍTICO</h3>
                     <p>Santidade ao Senhor</p>
                 </div>
                 <div class="preview-card">
-                    <div class="preview-img"><img src="assets/mapa_numeros.png" alt="Mapa Mental Números"></div>
+                    <div class="preview-img"><img src="assets/mapa_numeros.png" alt="Mapa Mental Números" width="400" height="300" loading="lazy"></div>
                     <h3>NÚMEROS</h3>
                     <p>A Jornada no Deserto</p>
                 </div>
@@ -267,22 +285,22 @@
                 <h2 class="section-title"><i class="fas fa-award"></i> Bônus Exclusivos de Lançamento</h2>
                 <div class="bonus-grid">
                     <div class="bonus-card">
-                        <div class="bonus-img-render"><img src="assets/bonus1.png" alt="Bônus 1: Guia de Áudio"></div>
+                        <div class="bonus-img-render"><img src="assets/bonus1.png" alt="Bônus 1: Guia de Áudio" width="600" height="400" loading="lazy"></div>
                         <h3>Bônus 1: Guia de Explicação em Áudio</h3>
                         <p>Um audioguia para você ouvir enquanto visualiza cada mapa importante.</p>
                     </div>
                     <div class="bonus-card">
-                        <div class="bonus-img-render"><img src="assets/bonus2.png" alt="Bônus 2: Planner Diário"></div>
+                        <div class="bonus-img-render"><img src="assets/bonus2.png" alt="Bônus 2: Planner Diário" width="600" height="400" loading="lazy"></div>
                         <h3>Bônus 2: Planner de Estudo Diário</h3>
                         <p>Um cronograma prático para você ler a Bíblia toda de forma organizada.</p>
                     </div>
                     <div class="bonus-card">
-                        <div class="bonus-img-render"><img src="assets/bonus3.png" alt="Bônus 3: Certificado"></div>
+                        <div class="bonus-img-render"><img src="assets/bonus3.png" alt="Bônus 3: Certificado" width="600" height="400" loading="lazy"></div>
                         <h3>Bônus 3: Certificado de Conclusão</h3>
                         <p>Um reconhecimento oficial pela sua dedicação ao estudo da Palavra.</p>
                     </div>
                     <div class="bonus-card">
-                        <div class="bonus-img-render"><img src="assets/bonus4.png" alt="Bônus 4: Versão Mobile"></div>
+                        <div class="bonus-img-render"><img src="assets/bonus4.png" alt="Bônus 4: Versão Mobile" width="600" height="400" loading="lazy"></div>
                         <h3>Bônus 4: Versão Mobile Master</h3>
                         <p>Formato especial para leitura confortável em qualquer smartphone.</p>
                     </div>
@@ -481,7 +499,7 @@
                 </p>
 
                 <div class="author-img-container">
-                    <img src="assets/marcos.PNG" alt="Marcos Oliveira" class="author-img">
+                    <img src="assets/marcos.PNG" alt="Marcos Oliveira" class="author-img" width="120" height="120" loading="lazy">
                 </div>
             </div>
         </div>
